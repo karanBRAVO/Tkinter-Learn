@@ -22,12 +22,29 @@ _label = tk.Label(master=window, text="Hello World!")
 _label.pack()
 
 # input
-_input = ttk.Entry(master=window)
+_input_variable = tk.StringVar(master=window, value="karan yadav")
+_input = ttk.Entry(master=window, textvariable=_input_variable)
 _input.pack()
 
+
+def greet_user():
+    val = _input_variable.get()
+    if not val:
+        val = "Please enter your name"
+    else:
+        val = f"Hello, {val}"
+    _label2_variable.set(val)
+
+
 # button
-_button = ttk.Button(master=window, text="Greet")
+_button = ttk.Button(master=window, text="Greet", command=greet_user)
 _button.pack()
+
+# label2
+_label2_variable = tk.StringVar(master=window, value="")
+_label2 = ttk.Label(master=window,
+                    textvariable=_label2_variable)
+_label2.pack()
 
 # run the loop
 window.mainloop()
