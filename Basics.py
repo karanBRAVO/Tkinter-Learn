@@ -16,5 +16,18 @@ window.geometry(f"{WINDOW_WIDTH}x{WINDOW_HEIGHT}")
 # set the minimum size of the window
 window.minsize(WINDOW_WIDTH, WINDOW_HEIGHT)
 
+# widgets
+# label
+_label = tk.Label(master=window, text="Hello World!")
+_label.pack()
+
+# input
+_input = ttk.Entry(master=window)
+_input.pack()
+
+# button
+_button = ttk.Button(master=window, text="Greet")
+_button.pack()
+
 # run the loop
 window.mainloop()
